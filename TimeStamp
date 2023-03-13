@@ -1,0 +1,13 @@
+function timestamp () {
+const colInicio = 6;
+
+const hoja = SpreadsheetApp.getActiveSpreadsheet ().getActiveSheet();
+const celdaActiva = hoja.getActiveCell();
+const colActiva = celdaActiva.getColumn ();
+const filaActiva = celdaActiva.getRow();
+
+if(filaActiva>1 && (colActiva == 5 || colActiva == 23) && celdaActiva.getValue()==true) {
+ hoja.getRange(filaActiva,colActiva+1).setValue(new Date());
+
+  }
+}
